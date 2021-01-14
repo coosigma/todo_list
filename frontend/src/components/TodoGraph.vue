@@ -23,9 +23,9 @@ export default class TodoGraph extends Vue {
 	@Prop({ required: true }) allTodos: any;
 	public loaded: boolean = false;
 	public chartData: any = null;
-	public max_y = 0;
+	public maxY = 0;
 	public timer = 0;
-	public first_time = true;
+	public firstTime = true;
 	public unauthorized = false;
 	public options = {
 		title: {
@@ -54,9 +54,9 @@ export default class TodoGraph extends Vue {
 	}
 
 	mounted() {
-		if (this.first_time) {
+		if (this.firstTime) {
 			this.loadData();
-			this.first_time = false;
+			this.firstTime = false;
 		}
 	}
 
