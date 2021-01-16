@@ -9,14 +9,14 @@
             "type": "php",
             "request": "launch",
             "port": 9003,
-            "log": true,
+            "log": false,
         },
         {
             "name": "Listen for XDebug Docker",
             "type": "php",
             "request": "launch",
             "port": 9001,
-            "log": true,
+            "log": false,
             "externalConsole": false,
             // server -> local
             "pathMappings": {

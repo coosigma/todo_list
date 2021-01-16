@@ -80,7 +80,7 @@ class TodoController extends Controller
     {
         //
         $data = $request->post();
-        if ($this->user->id != $todo->user_id) {
+        if (!$this->authorize('update', $todo)) {
             return response(['error' => 'No permission'], 401);
         }
         $validator = Validator::make($data, [
@@ -103,7 +103,7 @@ class TodoController extends Controller
     public function destroy(Todo $todo)
     {
         //
-        if ($this->user->id != $todo->user_id) {
+        if (!$this->authorize('delete', $todo)) {
             return response(['error' => 'No permission'], 401);
         }
         $todo->delete();

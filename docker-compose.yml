@@ -20,6 +20,8 @@ services:
     image: php-xdebug
     container_name: php-xdebug
     hostname: php-xdebug
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     volumes:
       - ./etc/php/conf:/usr/local/etc/php
       - ./etc/php/logs:/var/log/php
