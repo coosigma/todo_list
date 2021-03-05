@@ -1,0 +1,352 @@
+Installing dependencies from lock file (including require-dev)
+Verifying lock file contents can be installed on current platform.
+Package operations: 113 installs, 0 updates, 0 removals
+    Failed to download composer/package-versions-deprecated from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download doctrine/event-manager from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download doctrine/cache from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download doctrine/dbal from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download doctrine/inflector from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download doctrine/lexer from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download symfony/polyfill-ctype from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download webmozart/assert from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download dragonmantank/cron-expression from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download symfony/polyfill-php80 from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download symfony/polyfill-mbstring from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download symfony/var-dumper from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download symfony/polyfill-intl-normalizer from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download symfony/polyfill-intl-grapheme from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download symfony/string from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download psr/container from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download symfony/service-contracts from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download symfony/polyfill-php73 from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download symfony/console from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download psr/log from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download monolog/monolog from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download voku/portable-ascii from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download phpoption/phpoption from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download graham-campbell/result-type from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download vlucas/phpdotenv from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download symfony/css-selector from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download tijsverkoyen/css-to-inline-styles from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download symfony/deprecation-contracts from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download symfony/routing from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download symfony/process from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download symfony/polyfill-php72 from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download symfony/polyfill-intl-idn from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download symfony/mime from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download symfony/http-foundation from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download symfony/http-client-contracts from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download psr/event-dispatcher from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download symfony/event-dispatcher-contracts from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download symfony/event-dispatcher from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download symfony/error-handler from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download symfony/http-kernel from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download symfony/finder from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download symfony/polyfill-iconv from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download egulias/email-validator from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download swiftmailer/swiftmailer from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download ramsey/collection from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download brick/math from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download ramsey/uuid from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download psr/simple-cache from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download opis/closure from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download symfony/translation-contracts from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download symfony/translation from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download nesbot/carbon from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download league/mime-type-detection from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download league/flysystem from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download league/commonmark from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download laravel/framework from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download filp/whoops from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download facade/ignition-contracts from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download facade/flare-client-php from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download facade/ignition from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download fakerphp/faker from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download fideloper/proxy from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download asm89/stack-cors from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download fruitcake/laravel-cors from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download psr/http-message from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download psr/http-client from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download ralouphie/getallheaders from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download guzzlehttp/psr7 from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download guzzlehttp/promises from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download guzzlehttp/guzzle from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download laravel/sail from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download nikic/php-parser from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download dnoegel/php-xdg-base-dir from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download psy/psysh from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download laravel/tinker from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download hamcrest/hamcrest-php from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download mockery/mockery from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download nunomaduro/collision from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download phpdocumentor/reflection-common from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download phpdocumentor/type-resolver from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download phpdocumentor/reflection-docblock from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download sebastian/version from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download sebastian/type from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download sebastian/resource-operations from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download sebastian/recursion-context from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download sebastian/object-reflector from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download sebastian/object-enumerator from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download sebastian/global-state from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download sebastian/exporter from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download sebastian/environment from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download sebastian/diff from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download sebastian/comparator from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download sebastian/code-unit from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download sebastian/cli-parser from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download phpunit/php-timer from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download phpunit/php-text-template from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download phpunit/php-invoker from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download phpunit/php-file-iterator from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download theseer/tokenizer from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download sebastian/lines-of-code from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download sebastian/complexity from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download sebastian/code-unit-reverse-lookup from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download phpunit/php-code-coverage from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download doctrine/instantiator from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download phpspec/prophecy from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download phar-io/version from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download phar-io/manifest from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download myclabs/deep-copy from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download phpunit/phpunit from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download namshi/jose from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download lcobucci/jwt from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    Failed to download tymon/jwt-auth from dist: The zip extension and unzip command are both missing, skipping.
+Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+    Now trying to download from source
+    0 [>---------------------------]    0 [>---------------------------]  - Installing composer/package-versions-deprecated (1.11.99.1): Cloning 7413f0b55a
+    Install of composer/package-versions-deprecated failed
+
+                                                                                                       
+  [RuntimeException]                                                                                   
+  Failed to clone https://github.com/composer/package-versions-deprecated.git, git was not found, che  
+  ck that it is installed and in your PATH env.                                                        
+                                                                                                       
+  sh: 1: git: not found                                                                                
+                                                                                                       
+
+install [--prefer-source] [--prefer-dist] [--dry-run] [--dev] [--no-suggest] [--no-dev] [--no-autoloader] [--no-scripts] [--no-progress] [--no-install] [-v|vv|vvv|--verbose] [-o|--optimize-autoloader] [-a|--classmap-authoritative] [--apcu-autoloader] [--apcu-autoloader-prefix APCU-AUTOLOADER-PREFIX] [--ignore-platform-req IGNORE-PLATFORM-REQ] [--ignore-platform-reqs] [--] [<packages>]...
+
