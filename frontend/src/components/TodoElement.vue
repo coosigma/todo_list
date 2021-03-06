@@ -36,7 +36,7 @@
 
 <script lang="ts">
 import { Component, Vue, Prop } from "vue-property-decorator";
-import { Todo } from "@/models/Todo";
+import { Todo, Status } from "@/models/Todo";
 @Component
 export default class TodoElement extends Vue {
 	@Prop({ required: true }) todo!: Todo;
@@ -51,7 +51,9 @@ export default class TodoElement extends Vue {
 	onChecked(event: InputEvent) {
 		this.$emit("updated", {
 			id: this.todo.id,
-			status: (<HTMLInputElement>event.target).checked ? 1 : 0,
+			status: (<HTMLInputElement>event.target).checked
+				? Status.done
+				: Status.undone,
 		});
 	}
 	onInput(event: InputEvent) {

@@ -53,7 +53,7 @@ import { Component, Vue } from "vue-property-decorator";
 import TodoDataService from "../services/TodoDataService";
 import TodoElement from "./TodoElement.vue";
 import TodoGraph from "./TodoGraph.vue";
-import { Todo } from "@/models/Todo";
+import { Todo, Status } from "@/models/Todo";
 
 @Component<TodoList>({
 	components: { TodoElement, TodoGraph },
@@ -66,7 +66,7 @@ export default class TodoList extends Vue {
 	public emptyTodo: Todo = {
 		id: null,
 		description: "",
-		status: 0,
+		status: Status.undone,
 	};
 	public newTodo: Todo = Object.assign({}, this.emptyTodo);
 	public unauthorized = false;

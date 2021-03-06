@@ -12,7 +12,7 @@
 
 <script lang="ts">
 import { Component, Vue, Prop, Watch } from "vue-property-decorator";
-import { Todo } from "@/models/Todo";
+import { Todo, Status } from "@/models/Todo";
 import LineChart from "./LineChart.vue";
 import moment from "moment";
 
@@ -20,7 +20,7 @@ import moment from "moment";
 	components: { LineChart },
 })
 export default class TodoGraph extends Vue {
-	@Prop({ required: true }) allTodos: Todo[] = [];
+	@Prop({ required: true }) allTodos!: Todo[];
 	public loaded: boolean = false;
 	public chartData: any = null;
 	public maxY = 0;
@@ -66,7 +66,7 @@ export default class TodoGraph extends Vue {
 			const now = moment();
 			// Get all unfinished todos
 			const todos: Todo[] = this.allTodos.filter(
-				(todo: Todo) => todo.status === 0,
+				(todo: Todo) => todo.status === Status.undone,
 			);
 			const timeLabels: string[] = this.get_minutes_labels(now.clone());
 			const datasets: { x: string; y: number }[] = this.get_datasets_data(
@@ -98,7 +98,7 @@ export default class TodoGraph extends Vue {
 		const now_time = now.unix();
 		const count_undone: number[] = Array(61).fill(0);
 		for (const todo of todos) {
-			if (todo.status === 0) {
+			if (todo.status === Status.undone) {
 				const todo_time = Date.parse(todo.updated_at || "") / 1000;
 				const diff = Math.ceil((now_time - todo_time) / 60);
 				if (diff >= 60) {
