@@ -35,7 +35,7 @@
 						:todo="todo"
 						:activated="index == currentIndex"
 						:key="index"
-						@selected="setActiveTodo(todo, index)"
+						@selected="setActiveTodo(todo, index, ...arguments)"
 						@updated="update(index, ...arguments)"
 						@deleted="deleteTodo(index, todo)"
 					></todo-element>
@@ -53,21 +53,22 @@ import { Component, Vue } from "vue-property-decorator";
 import TodoDataService from "../services/TodoDataService";
 import TodoElement from "./TodoElement.vue";
 import TodoGraph from "./TodoGraph.vue";
+import { Todo } from "@/models/Todo";
 
 @Component<TodoList>({
 	components: { TodoElement, TodoGraph },
 })
 export default class TodoList extends Vue {
-	public todos: any[] = [];
-	public currentTodo: any = null;
+	public todos: Todo[] = [];
+	public currentTodo: Todo | null = null;
 	public currentIndex: number = -1;
 	public title: string = "";
-	public emptyTodo: any = {
+	public emptyTodo: Todo = {
 		id: null,
 		description: "",
 		status: 0,
-	}
-	public newTodo: any = Object.assign({}, this.emptyTodo);
+	};
+	public newTodo: Todo = Object.assign({}, this.emptyTodo);
 	public unauthorized = false;
 
 	async retrieveTodos() {
@@ -82,16 +83,24 @@ export default class TodoList extends Vue {
 		}
 	}
 
-	async update(index: number, { id, ...attr }: any) {
+	async update(index: number, todo: Todo) {
+		if (todo.id === null) {
+			return;
+		}
 		try {
-			const response = await TodoDataService.update(id, attr);
+			const response = await TodoDataService.update(todo);
 			this.todos[index] = response.data.todo;
+			// Deep watcher cannot catch frequent updating operations
+			this.retrieveTodos();
 		} catch (error) {
 			console.log(error);
 		}
 	}
 
-	async deleteTodo(index: number, { id }: any) {
+	async deleteTodo(index: number, { id }: Todo) {
+		if (id === null) {
+			return;
+		}
 		try {
 			const response = await TodoDataService.delete(id);
 			this.todos.splice(index, 1);
@@ -100,11 +109,12 @@ export default class TodoList extends Vue {
 		}
 	}
 
-	handleKeyUp(event: any) {
-		if (event.keyCode === 13) {
+	handleKeyUp(event: KeyboardEvent) {
+		if (event.key === "Enter") {
 			this.addTodo();
 		}
 	}
+
 	async addTodo() {
 		const data = {
 			description: this.newTodo.description,
@@ -125,9 +135,10 @@ export default class TodoList extends Vue {
 		this.currentIndex = -1;
 	}
 
-	setActiveTodo(todo: any, index: number) {
+	setActiveTodo(todo: Todo, index: number, event: Event) {
 		this.currentTodo = todo;
 		this.currentIndex = index;
+		event.stopPropagation();
 	}
 
 	inactivate() {
@@ -138,6 +149,30 @@ export default class TodoList extends Vue {
 	mounted() {
 		this.retrieveTodos();
 	}
+
+	created() {
+		// "blur" event
+		window.addEventListener("click", this.clickOther);
+	}
+
+	destroyed() {
+		window.removeEventListener("click", this.clickOther);
+	}
+
+	clickOther() {
+		this.inactivate();
+	}
+
+	// clickOther(e: EventListenerOrEventListenerObject)
+	// 	const self = this;
+	// 	if (
+	// 		self.$el.querySelector(".search-content") &&
+	// 		!self.$el.querySelector(".search-content").contains(e.target)
+	// 	) {
+	// 		self.isCandidateBox = false;
+	// 		console.log("点击事件1");
+	// 	}
+	// }
 }
 </script>
 

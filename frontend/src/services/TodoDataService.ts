@@ -1,4 +1,5 @@
 import http from "../http-common";
+import { Todo } from "@/models/Todo";
 
 class TodoDataService {
 	getAll() {
@@ -12,13 +13,13 @@ class TodoDataService {
 	get(id: string) {
 		return http.get(`todos/${id}`);
 	}
-	create(data: any) {
+	create(data: { description: string; status: number }) {
 		return http.post("todos", data);
 	}
-	update(id: string, data: any) {
-		return http.put(`todos/${id}`, data);
+	update({ id, ...attr }: Todo) {
+		return http.put(`todos/${id}`, attr);
 	}
-	delete(id: string) {
+	delete(id: number) {
 		return http.delete(`todos/${id}`);
 	}
 }

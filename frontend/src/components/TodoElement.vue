@@ -2,7 +2,7 @@
 	<tr
 		class="list-group-item"
 		:class="{ active: activated }"
-		@click="$emit('selected')"
+		@click="$emit('selected', $event)"
 	>
 		<td>
 			<input
@@ -36,9 +36,10 @@
 
 <script lang="ts">
 import { Component, Vue, Prop } from "vue-property-decorator";
+import { Todo } from "@/models/Todo";
 @Component
 export default class TodoElement extends Vue {
-	@Prop({ required: true }) todo: any;
+	@Prop({ required: true }) todo!: Todo;
 	@Prop({ required: true, default: false })
 	activated!: boolean;
 	cb_id() {
@@ -47,16 +48,16 @@ export default class TodoElement extends Vue {
 	inp_id() {
 		return `inp${this.todo.id}`;
 	}
-	onChecked(event: any) {
+	onChecked(event: InputEvent) {
 		this.$emit("updated", {
 			id: this.todo.id,
-			status: event.target.checked ? 1 : 0,
+			status: (<HTMLInputElement>event.target).checked ? 1 : 0,
 		});
 	}
-	onInput(event: any) {
+	onInput(event: InputEvent) {
 		this.$emit("updated", {
 			id: this.todo.id,
-			description: event.target.value,
+			description: (<HTMLInputElement>event.target).value,
 		});
 	}
 }
