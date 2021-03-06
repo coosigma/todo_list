@@ -62,11 +62,12 @@ export default class TodoList extends Vue {
 	public currentTodo: any = null;
 	public currentIndex: number = -1;
 	public title: string = "";
-	public newTodo: any = {
+	public emptyTodo: any = {
 		id: null,
 		description: "",
 		status: 0,
-	};
+	}
+	public newTodo: any = Object.assign({}, this.emptyTodo);
 	public unauthorized = false;
 
 	async retrieveTodos() {
@@ -111,7 +112,7 @@ export default class TodoList extends Vue {
 		};
 		try {
 			const response = await TodoDataService.create(data);
-			this.newTodo = {};
+			this.newTodo = Object.assign({}, this.emptyTodo);
 			this.todos.push(response.data.todo);
 		} catch (error) {
 			console.log(error);

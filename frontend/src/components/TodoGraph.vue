@@ -13,7 +13,6 @@
 <script lang="ts">
 import { Component, Vue, Prop, Watch } from "vue-property-decorator";
 import LineChart from "./LineChart.vue";
-import TodoDataService from "@/services/TodoDataService";
 import moment from "moment";
 
 @Component<TodoGraph>({
@@ -38,7 +37,8 @@ export default class TodoGraph extends Vue {
 					ticks: {
 						beginAtZero: true,
 						callback: function(value: number) {
-							if (value % 1 === 0) {
+							// Only reuturn integer ticks
+						if (value % 1 === 0) {
 								return value;
 							}
 						},
@@ -63,6 +63,7 @@ export default class TodoGraph extends Vue {
 	async loadData() {
 		try {
 			const now = moment();
+			// Get todos updated in the past 60 minutes
 			const todos = this.allTodos.filter(
 				(todo: { status: number; updated_at: string }) =>
 					todo.status === 0 ||
@@ -97,24 +98,30 @@ export default class TodoGraph extends Vue {
 		clearInterval(this.timer);
 	}
 	get_datasets_data(todos: any, label_array: any, now: any) {
+		// debugger;
 		const now_time = now.unix();
 		const count_done: number[] = Array(61).fill(0);
 		const count_undone: number[] = Array(61).fill(0);
 		for (const todo of todos) {
-			if (todo.status === 0) {
+			if (todo.status === 0) { // "Add a todo"
 				const todo_time = Date.parse(todo.updated_at) / 1000;
 				const diff = Math.ceil((now_time - todo_time) / 60);
 				if (diff >= 60) {
+					// Unfinished todos whose update time is equal to or more than 60 minutes
 					++count_undone[60];
 				} else {
+					// Unfinished todos with an update time of less than 60 minutes
 					++count_undone[diff];
 				}
-			} else {
+			} else { // "A todo is completed"
+				// Todos completed in the past 60 minutes 
 				const todo_time = Date.parse(todo.updated_at) / 1000;
 				const diff = Math.ceil((now_time - todo_time) / 60);
 				++count_done[diff];
 			}
 		}
+		// Accumulate the number of adding (undone) todos from "past" (59' diff) to "now" (0' diff)
+		// The number of "60' diff" is itself
 		for (let i = count_undone.length - 2; i >= 0; --i) {
 			count_undone[i] += count_undone[i + 1];
 		}
@@ -122,9 +129,13 @@ export default class TodoGraph extends Vue {
 		data.push({ x: label_array[0], y: count_done[0] + count_undone[0] });
 		for (let i = 1; i < count_done.length; ++i) {
 			const time = label_array[i];
-			const freq = count_undone[i] + count_done[i] + count_done[i - 1];
+			const freq = count_undone[i] - count_done[i] - count_done[i - 1];
+			if (freq < 0) {
+				debugger;
+			}
 			data.push({ x: time, y: freq });
 		}
+		// console.log('data', data);
 		return data.reverse();
 	}
 	get_minutes_labels(now: any) {
