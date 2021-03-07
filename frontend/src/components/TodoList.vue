@@ -162,17 +162,6 @@ export default class TodoList extends Vue {
 	clickOther() {
 		this.inactivate();
 	}
-
-	// clickOther(e: EventListenerOrEventListenerObject)
-	// 	const self = this;
-	// 	if (
-	// 		self.$el.querySelector(".search-content") &&
-	// 		!self.$el.querySelector(".search-content").contains(e.target)
-	// 	) {
-	// 		self.isCandidateBox = false;
-	// 		console.log("点击事件1");
-	// 	}
-	// }
 }
 </script>
 
