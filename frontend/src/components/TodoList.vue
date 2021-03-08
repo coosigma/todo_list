@@ -35,7 +35,7 @@
 						:todo="todo"
 						:activated="index == currentIndex"
 						:key="index"
-						@selected="setActiveTodo(todo, index, ...arguments)"
+						@selected.stop="setActiveTodo(todo, index, ...arguments)"
 						@updated="update(index, ...arguments)"
 						@deleted="deleteTodo(index, todo)"
 					></todo-element>
@@ -138,7 +138,6 @@ export default class TodoList extends Vue {
 	setActiveTodo(todo: Todo, index: number, event: Event) {
 		this.currentTodo = todo;
 		this.currentIndex = index;
-		event.stopPropagation();
 	}
 
 	inactivate() {

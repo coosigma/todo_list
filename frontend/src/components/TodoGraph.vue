@@ -64,16 +64,6 @@ export default class TodoGraph extends Vue {
 	async loadData() {
 		try {
 			const now = moment();
-			// Get all unfinished todos or finished todo in the past 60'
-			// const todos: Todo[] = this.allTodos.filter(
-			// 	(todo: Todo) =>
-			// 		todo.status === Status.undone ||
-			// 		Date.parse(todo.updated_at || "") / 1000 >=
-			// 			now
-			// 				.clone()
-			// 				.subtract(60, "minute")
-			// 				.unix(),
-			// );
 			const timeLabels: string[] = this.getMinutesLabels(now.clone());
 			const datasets: { x: string; y: number }[] = this.getDatasetsData(
 				this.allTodos,
