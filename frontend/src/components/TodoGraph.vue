@@ -106,16 +106,14 @@ export default class TodoGraph extends Vue {
 		const countUndones: number[] = Array(60).fill(0);
 		const maxDiff: number = 59;
 		for (const todo of todos) {
+			const createTime = Date.parse(todo.created_at || "") / 1000;
 			const updateTime = Date.parse(todo.updated_at || "") / 1000;
-			const diff = Math.min(Math.floor((nowTime - updateTime) / 60), maxDiff);
-			if (todo.status === Status.undone) {
-				// Undone todos caused by adding or unchecking
-				++countUndones[diff];
+			let diff = Math.min(Math.floor((nowTime - createTime) / 60), maxDiff);
+			++countUndones[diff];
+			if (todo.status === Status.done) {
+				diff = Math.min(Math.floor((nowTime - updateTime) / 60), maxDiff);
+				--countUndones[diff];
 			}
-			// } else {
-			// 	// Finished todos caused by checking
-			// 	countUndones[diff];
-			// }
 		}
 		const data: { x: string; y: number }[] = [];
 		// Accumulate the number of adding (undone) todos from "past" (59' diff) to "now" (0' diff)
