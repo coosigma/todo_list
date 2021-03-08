@@ -73,12 +73,13 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import { namespace } from "vuex-class";
+import { User } from "@/models/User";
 const Auth = namespace("Auth");
 
 @Component
 export default class Register extends Vue {
 	[x: string]: any;
-	private user: any = { username: "", email: "", password: "" };
+	private user: User = { username: "", email: "", password: "" };
 
 	private submitted: boolean = false;
 	private successful: boolean = false;

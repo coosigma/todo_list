@@ -23,7 +23,6 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import { component } from "vue/types/umd";
 import { namespace } from "vuex-class";
 const Auth = namespace("Auth");
 

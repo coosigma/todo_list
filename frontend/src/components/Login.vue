@@ -62,14 +62,14 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import { component } from "vue/types/umd";
 import { namespace } from "vuex-class";
+import { User } from "@/models/User";
 const Auth = namespace("Auth");
 
 @Component
 export default class Login extends Vue {
 	[x: string]: any;
-	private user: any = { email: "", password: "" };
+	private user: User = { email: "", password: "" };
 	private loading: boolean = false;
 	private message: string = "";
 
