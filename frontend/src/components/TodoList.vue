@@ -43,7 +43,7 @@
 			</table>
 		</div>
 		<div class="col-md-10">
-			<todo-graph :allTodos="todos"></todo-graph>
+			<!-- <todo-graph :allTodos="todos"></todo-graph> -->
 		</div>
 	</div>
 </template>

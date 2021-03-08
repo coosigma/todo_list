@@ -64,13 +64,19 @@ export default class TodoGraph extends Vue {
 	async loadData() {
 		try {
 			const now = moment();
-			// Get all unfinished todos
-			const todos: Todo[] = this.allTodos.filter(
-				(todo: Todo) => todo.status === Status.undone,
-			);
-			const timeLabels: string[] = this.get_minutes_labels(now.clone());
-			const datasets: { x: string; y: number }[] = this.get_datasets_data(
-				todos,
+			// Get all unfinished todos or finished todo in the past 60'
+			// const todos: Todo[] = this.allTodos.filter(
+			// 	(todo: Todo) =>
+			// 		todo.status === Status.undone ||
+			// 		Date.parse(todo.updated_at || "") / 1000 >=
+			// 			now
+			// 				.clone()
+			// 				.subtract(60, "minute")
+			// 				.unix(),
+			// );
+			const timeLabels: string[] = this.getMinutesLabels(now.clone());
+			const datasets: { x: string; y: number }[] = this.getDatasetsData(
+				this.allTodos,
 				timeLabels,
 				now,
 			);
@@ -94,35 +100,36 @@ export default class TodoGraph extends Vue {
 		}
 	}
 
-	get_datasets_data(todos: Todo[], label_array: string[], now: any) {
-		const now_time = now.unix();
-		const count_undone: number[] = Array(61).fill(0);
+	getDatasetsData(todos: Todo[], labelArray: string[], now: any) {
+		const nowTime = now.unix();
+		// Number of undone todos
+		const countUndones: number[] = Array(60).fill(0);
+		const maxDiff: number = 59;
 		for (const todo of todos) {
+			const updateTime = Date.parse(todo.updated_at || "") / 1000;
+			const diff = Math.min(Math.floor((nowTime - updateTime) / 60), maxDiff);
 			if (todo.status === Status.undone) {
-				const todo_time = Date.parse(todo.updated_at || "") / 1000;
-				const diff = Math.ceil((now_time - todo_time) / 60);
-				if (diff >= 60) {
-					// Unfinished todos whose update time is equal to or more than 60 minutes
-					++count_undone[60];
-				} else {
-					// Unfinished todos with an update time of less than 60 minutes
-					++count_undone[diff];
-				}
+				// Undone todos caused by adding or unchecking
+				++countUndones[diff];
 			}
+			// } else {
+			// 	// Finished todos caused by checking
+			// 	countUndones[diff];
+			// }
 		}
 		const data: { x: string; y: number }[] = [];
 		// Accumulate the number of adding (undone) todos from "past" (59' diff) to "now" (0' diff)
-		// The sum of "60' diff" is itself
-		data.push({ x: label_array[60], y: count_undone[60] });
-		for (let i = count_undone.length - 2; i >= 0; --i) {
-			count_undone[i] += count_undone[i + 1];
-			const time = label_array[i];
-			data.push({ x: time, y: count_undone[i] });
+		// The sum of "59' diff" is itself
+		data.push({ x: labelArray[59], y: countUndones[59] });
+		for (let i = countUndones.length - 2; i >= 0; --i) {
+			countUndones[i] += countUndones[i + 1];
+			const time = labelArray[i];
+			data.push({ x: time, y: countUndones[i] });
 		}
-		return data;
+		return data.reverse();
 	}
 
-	get_minutes_labels(now: any) {
+	getMinutesLabels(now: any) {
 		const res: string[] = Array(61);
 		for (let i = 0; i < res.length; ++i) {
 			res[i] = now.format("HH:mm");
