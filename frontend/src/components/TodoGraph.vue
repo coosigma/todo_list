@@ -51,7 +51,7 @@ export default class TodoGraph extends Vue {
 
 	@Watch("allTodos", { immediate: true, deep: true })
 	onTodosChange(allTodos: Todo[]) {
-		this.loadData();
+		this.loadData(allTodos);
 	}
 
 	mounted() {
@@ -61,12 +61,13 @@ export default class TodoGraph extends Vue {
 		}
 	}
 
-	async loadData() {
+	async loadData(allTodos: Todo[] = []) {
+		allTodos = allTodos.length === 0 ? this.allTodos : allTodos;
 		try {
 			const now = moment();
 			const timeLabels: string[] = this.getMinutesLabels(now.clone());
 			const datasets: { x: string; y: number }[] = this.getDatasetsData(
-				this.allTodos,
+				allTodos,
 				timeLabels,
 				now,
 			);
