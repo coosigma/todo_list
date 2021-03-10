@@ -63,7 +63,7 @@ class TodoController extends Controller
     public function show(Todo $todo)
     {
         //
-        if ($todo->user_id != $this->user->id) {
+        if (!$this->authorize('view', $todo)) {
             return response(['error' => 'No permission'], 401);
         }
         return response(['todo' => new TodoResource($todo), 'message' => 'Retrieved successfully'], 200);
