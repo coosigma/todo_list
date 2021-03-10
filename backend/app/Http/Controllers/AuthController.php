@@ -11,11 +11,11 @@ class AuthController extends Controller
 {
     public function register(Request $request)
     {
-        $v = Validator::make($request->all(), [
+        $validate = Validator::make($request->all(), [
             'email' => 'required|email|unique:users',
             'password' => 'required|min:3',
         ]);
-        if ($v->fails()) {
+        if ($validate->fails()) {
             return response()->json([
                 'status' => 'error',
                 'message' => $v->errors(),
