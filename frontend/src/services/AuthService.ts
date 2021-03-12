@@ -4,6 +4,7 @@ const API_URL = "http://127.0.0.1/api/auth/";
 
 class AuthService {
 	async login(email: string, password: string) {
+		console.log(process.env.VUE_APP_API_URL);
 		const response = await axios.post(API_URL + "login", {
 			email,
 			password,
