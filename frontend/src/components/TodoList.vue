@@ -36,7 +36,7 @@
 						:activated="index == currentIndex"
 						:key="index"
 						@selected.stop="setActiveTodo(todo, index, ...arguments)"
-						@updated="update(index, ...arguments)"
+						@updated="editTodo(index, ...arguments)"
 						@deleted="deleteTodo(index, todo)"
 					></todo-element>
 				</template>
@@ -50,16 +50,35 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import TodoDataService from "../services/TodoDataService";
 import TodoElement from "./TodoElement.vue";
 import TodoGraph from "./TodoGraph.vue";
 import { Todo, Status } from "@/models/Todo";
+import { namespace } from "vuex-class";
+const TodoStore = namespace("Todo");
 
 @Component<TodoList>({
 	components: { TodoElement, TodoGraph },
 })
 export default class TodoList extends Vue {
-	public todos: Todo[] = [];
+	@TodoStore.State
+	private todos!: Todo[];
+
+	@TodoStore.Action
+	private retrieveTodos!: () => Promise<any>;
+
+	@TodoStore.Action
+	private insertTodo!: (todo: {
+		description: string;
+		status: Status;
+	}) => Promise<any>;
+
+	@TodoStore.Action
+	private updateTodo!: (data: { index: number; todo: Todo }) => Promise<any>;
+	// private updateTodo!: ({ index: number, todo: Todo }) => Promise<any>;
+
+	@TodoStore.Action
+	private deleteTodo!: (index: number, todo: Todo) => Promise<any>;
+
 	public currentTodo: Todo | null = null;
 	public currentIndex: number = -1;
 	public title: string = "";
@@ -71,39 +90,27 @@ export default class TodoList extends Vue {
 	public newTodo: Todo = Object.assign({}, this.emptyTodo);
 	public unauthorized = false;
 
-	async retrieveTodos() {
+	async addTodo() {
+		const data = {
+			description: this.newTodo.description,
+			status: this.newTodo.status,
+		};
 		try {
-			const response = await TodoDataService.getAll();
-			this.todos = response.data;
+			this.insertTodo(data);
+			this.newTodo = Object.assign({}, this.emptyTodo);
 		} catch (error) {
-			if (error.response.status === 401) {
-				this.unauthorized = true;
-			}
 			console.log(error);
 		}
 	}
 
-	async update(index: number, todo: Todo) {
+	async editTodo(index: number, todo: Todo) {
 		if (todo.id === null) {
 			return;
 		}
 		try {
-			const response = await TodoDataService.update(todo);
-			this.todos[index] = response.data.todo;
+			this.updateTodo({ index, todo });
 			// Deep watcher cannot catch frequent updating operations
 			this.retrieveTodos();
-		} catch (error) {
-			console.log(error);
-		}
-	}
-
-	async deleteTodo(index: number, { id }: Todo) {
-		if (id === null) {
-			return;
-		}
-		try {
-			const response = await TodoDataService.delete(id);
-			this.todos.splice(index, 1);
 		} catch (error) {
 			console.log(error);
 		}
@@ -112,20 +119,6 @@ export default class TodoList extends Vue {
 	handleKeyUp(event: KeyboardEvent) {
 		if (event.key === "Enter") {
 			this.addTodo();
-		}
-	}
-
-	async addTodo() {
-		const data = {
-			description: this.newTodo.description,
-			status: this.newTodo.status,
-		};
-		try {
-			const response = await TodoDataService.create(data);
-			this.newTodo = Object.assign({}, this.emptyTodo);
-			this.todos.push(response.data.todo);
-		} catch (error) {
-			console.log(error);
 		}
 	}
 
